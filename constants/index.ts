@@ -92,21 +92,21 @@ export const topCategoryStyles = {
 };
 
 export const transactionCategoryStyles = {
-  "Food and Drink": {
+  "FOOD AND DRINK": {
     borderColor: "border-pink-600",
     backgroundColor: "bg-pink-500",
     textColor: "text-pink-700",
     chipBackgroundColor: "bg-inherit",
   },
-  Payment: {
-    borderColor: "border-success-600",
-    backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
+  INCOME: {
+    borderColor: "border-[#4ADE80]",
+    backgroundColor: "bg-[#4ADE80]",
+    textColor: "text-[#4ADE80]",
     chipBackgroundColor: "bg-inherit",
   },
-  "Bank Fees": {
-    borderColor: "border-success-600",
-    backgroundColor: "bg-green-600",
+  "LOAN PAYMENTS": {
+    borderColor: "border-success-700",
+    backgroundColor: "bg-green-700",
     textColor: "text-success-700",
     chipBackgroundColor: "bg-inherit",
   },
@@ -114,6 +114,24 @@ export const transactionCategoryStyles = {
     borderColor: "border-red-700",
     backgroundColor: "bg-red-700",
     textColor: "text-red-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  ENTERTAINMENT: {
+    borderColor: "border-orange-700",
+    backgroundColor: "bg-orange-700",
+    textColor: "text-orange-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  TRAVEL: {
+    borderColor: "border-[#55ecee]",
+    backgroundColor: "bg-[#55ecee]",
+    textColor: "text-[#55ecee]",
+    chipBackgroundColor: "bg-inherit",
+  },
+  TRANSPORTATION: {
+    borderColor: "border-[#8308ff]",
+    backgroundColor: "bg-[#8308ff]",
+    textColor: "text-[#8308ff]",
     chipBackgroundColor: "bg-inherit",
   },
   Processing: {
