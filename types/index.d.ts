@@ -245,7 +245,8 @@ declare interface TransactionTableProps {
 }
 
 declare interface CategoryProps {
-  category: CategoryCount;
+  name: string;
+  percentage: number;
 }
 
 declare interface DoughnutChartProps {

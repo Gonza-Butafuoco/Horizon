@@ -2,8 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import BankCard from "./BankCard";
+import {
+  countTransactionCategories,
+  removeSpecialCharacters,
+} from "@/lib/utils";
+import Category from "./Category";
 
 const RightSiderbar = ({ user, transactions, banks }: RightSidebarProps) => {
+  const categories: CategoryCount[] = countTransactionCategories(transactions);
+
+  const topCategories = categories
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 3);
+
+  const totalTransactions = categories.reduce(
+    (sum, category) => sum + category.count,
+    0
+  );
+
   return (
     <aside className="right-sidebar">
       <section className="flex flex-col pb-8">
@@ -54,6 +70,25 @@ const RightSiderbar = ({ user, transactions, banks }: RightSidebarProps) => {
             )}
           </div>
         )}
+
+        <div className="mt-10 flex flex-1 flex-col gap-6">
+          <h2 className="header-2">Top Categories</h2>
+          <div className="space-y-5">
+            {topCategories.map((category) => {
+              const percentage = totalTransactions
+                ? Math.round((category.count / totalTransactions) * 100)
+                : 0;
+
+              return (
+                <Category
+                  key={category.name}
+                  name={removeSpecialCharacters(category.name)}
+                  percentage={percentage}
+                />
+              );
+            })}
+          </div>
+        </div>
       </section>
     </aside>
   );
